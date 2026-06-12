@@ -69,19 +69,20 @@ streamlit run streamlitApp.py
 ---
 
 ## Arborescence du dépôt
-
+```text
 projet_etudiant_P26/
-├── .gitignore                             
-├── README.md                              
+├── .gitignore                             # Fichier pour exclure les fichiers lourds du suivi Git
+├── README.md                              # Guide explicatif principal du projet
 │
-├── data/                                 
-│   └── cac40_stocks_2010_2021.csv                  
+├── data/                                  # Données brutes et archivées
+│   └── cac40_stocks_2010_2021.csv         # Jeu de données historique statique issu de Kaggle
 │
-├── documentations/                        
-│   ├── rapport_PE_P26.pdf                 
-│   ├── fiche_PE.pdf                      
-│   └── projet_etudiant.pdf               
+├── documentations/                        # Livrables et documents académiques
+│   ├── rapport_PE_P26.pdf                 # Rapport de projet final d'ingénieur
+│   ├── fiche_PE.pdf                       # Fiche de synthèse du Projet Étudiant
+│   └── projet_etudiant.pdf                # Description officielle du projet étudiant
 │
-└── scripts/                             
-    ├── streamlitApp.py                    
-    └── analyse_des_donnes_financieres.ipynb 
+└── scripts/                               # Code source et modules de modélisation
+    ├── streamlitApp.py                    # Application principale et tableau de bord Streamlit
+    └── analyse_des_donnes_financieres.ipynb # Fichier Jupyter (Recherche, ML, K-Means)
+```
