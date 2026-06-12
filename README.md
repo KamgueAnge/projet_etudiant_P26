@@ -1,37 +1,86 @@
-# projet_etudiant_P26 : Outil de Modélisation Quantitative de Portefeuille Basé sur l’Analyse de Données et le Machine Learning
+# Modélisation de Portefeuilles avec Python & Machine Learning (Projet Étudiant P26)
 
-## Contexte 
-La gestion de portefeuille moderne fait appel à des méthodes quantitatives avancées. 
-L'objectif de ce projet est de concevoir un outil d’analyse de portefeuille financier s'appuyant sur des algorithmes de machine learning pour l’optimisation et 
-la prédiction de rendements, avec intégration de données réelles via API, 
-backtesting et analyse comparative. 
+## Présentation du Projet
+Ce dépôt contient les travaux réalisés dans le cadre du **Projet Etudiant (PE) - Modélisation de Portefeuilles avec Python & Machine Learning** à l'Université de Technologie de Troyes (UTT). L'objectif est de concevoir un moteur quantitatif d'allocation d'actifs sur le **CAC 40** en faisant converger la théorie financière classique et l'apprentissage supervisé / non supervisé.
+
+L'écosystème intègre :
+* **Data Engineering :** Ingestion automatisée en temps réel depuis l'API Yahoo Finance.
+* **Machine Learning :** Modèles de prédiction et de classification directionnelle (KNN, SVM, Random Forest) et clustering comportemental (K-Means + PCA).
+* **Moteur Quantitatif :** Implémentation de la frontière efficiente de Markowitz, du MEDAF (CAPM) et du modèle bayésien de **Black-Litterman** interconnecté aux prédictions de l'IA.
+* **Interface Décisionnelle :** Un tableau de bord interactif développé avec **Streamlit**.
+
+---
+
+## Dépendances et Packages Python
+
+Le projet est développé localement en utilisant **Python 3.14.5** (via Anaconda et Visual Studio Code). Les bibliothèques requises se divisent en plusieurs catégories :
+
+### 1. Collecte et Manipulation de Données
+* `yfinance` : Connexion aux API de Yahoo Finance pour la récupération des flux boursiers.
+* `pandas` : Traitement des structures de données temporelles (*DataFrames*), calcul des rendements logarithmiques et statistiques glissantes.
+* `numpy` : Opérations matricielles et calculs algébriques lourds.
+
+### 2. Machine Learning et Optimisation Financière
+* `scikit-learn` : Implémentation des algorithmes de ML (KNN, SVM, Random Forest, K-Means, PCA) et régularisation de covariance via Ledoit-Wolf.
+* `scipy` : Optimisation non linéaire sous contraintes pour la maximisation du ratio de Sharpe (`scipy.optimize`).
+* `PyPortfolioOpt` : Bibliothèque d'ingénierie financière utilisée pour stabiliser l'implémentation de la Frontière Efficiente de Markowitz et le modèle de Black-Litterman.
+
+### 3. Visualisation et Interface Graphique
+* `matplotlib` & `seaborn` : Génération des histogrammes de rendement (KDE), tracés temporels et cartes de chaleur (*heatmaps*).
+* `streamlit` : Framework de déploiement de l'application web interactive.
+
+---
+
+## Tutoriel d'Installation et de Lancement
+
+Suivez ces étapes pour cloner le projet, installer l'environnement et lancer l'application Streamlit sur votre machine locale.
+
+### Étape 1 : Cloner le dépôt distant
+Ouvrez votre terminal et exécutez la commande suivante pour copier le projet en local :
+```bash
+git clone [https://github.com/KamgueAnge/projet_etudiant_P26.git](https://github.com/KamgueAnge/projet_etudiant_P26.git)
+cd projet_etudiant_P26
+```
+
+### Étape 2 : Créer et activer un environnement virtuel (Recommandé)
+- Sur Windows :
+```bash
+python -m venv venv
+.\venv\Scripts\activate
+```
+- Sur macOS / Linux
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+
+### Étape 3 : Installer les dépendances
+```bash
+pip install yfinance pandas numpy scikit-learn scipy PyPortfolioOpt matplotlib seaborn streamlit
+```
+
+### Pour lancer l'application streamlit
+Placez vous dans le dossier script puis effectuez cette commande:
+```bash
+streamlit run streamlitApp.py
+```
 
 
-## Objectifs
-- Appliquer des méthodes statistiques et de machine learning à des données financières réelles 
-- Intégrer des APIs financières (Yahoo Finance, Alpha Vantage) pour la collecte dynamique 
-- Développer un module de backtesting avec visualisation des performances historiques 
-- Comparer différents modèles d’optimisation (Markowitz, Black-Litterman, Réseaux de neurones) 
-- Concevoir un tableau de bord interactif permettant la visualisation des performances 
+---
 
-
-## Compétences mobilisées
-- Python (Pandas, NumPy, scikit-learn, Matplotlib, yfinance, PyPortfolioOpt)
-- APIs financières (yfinance, Alpha Vantage) 
-- Méthodes de backtesting et évaluation des performances (Sharpe, Sortino) 
-- Dashboard interactif (Streamlit, Dash)
-
-## Roadmap (10 semaines)
-
-| Semaine | Thème                          | Objectifs                                              | Temps estimé | Plateformes recommandées        |
-|--------|--------------------------------|-------------------------------------------------------|-------------|--------------------------------|
-| 1      | Python avancé                  | Structures, fonctions, modules, tests                 | 12h         | DataCamp, Udacity    |
-| 2      | Numpy, Pandas, APIs financières | Collecte et nettoyage des données                     | 15h         | Kaggle, Alpha Vantage Docs, YFinance     |
-| 3      | Visualisation & statistiques   | Visualisation avancée + statistiques de base          | 12h         | Seaborn, Matplotlib, StatQuest |
-| 4      | ML appliqué à la finance       | Régression, classification, clustering                | 16h         | scikit-learn, Kaggle Learn     |
-| 5      | Théorie financière             | CAPM, Markowitz, Black-Litterman                      | 15h         | Coursera, Investopedia         |
-| 6      | Implémentation optimisation    | PyPortfolioOpt, comparaison de modèles                | 14h         | GitHub, Docs officielles       |
-| 7      | Backtesting & évaluation       | Modules de test, Sharpe ratio, Sortino ratio          | 15h         | Medium, Backtrader             |
-| 8      | Application Streamlit          | Construction complète du tableau de bord              | 15h         | Streamlit, YouTube             |
-| 9      | Analyse critique               | Rédaction du rapport, synthèse, limites               | 13h         | Overleaf, Word                 |
-| 10     | Présentation                   | Slides, soutenance simulée                            | 13h         | Canva, Google Slides           |
+## Arborescence
+projet_etudiant_P26/
+├── .gitignore               # Fichier pour exclure les fichiers lourds ou inutiles du suivi Git
+├── README.md                # Guide explicatif principal du projet (ce fichier)
+│
+├── data/                    # Données brutes et archivées
+│   ├── cac40_stocks.csv     # Jeu de données historique statique issu de Kaggle
+│
+├── documentations/          # Livrables et documents académiques
+│   ├── rapport_PE_P26.pdf   # Rapport de projet final d'ingénieur 
+│   └── fiche_PE.pdf    # Fiche de PE
+|   └── projet_etudiant.pdf    # Desciption du projet étudiant
+│
+└── scripts/                 # Code source et modules de modélisation
+    ├── streamlitApp.py               # Application principale et tableau de bord Streamlit
+    └── analyse_des_donnes_financieres.ipynb    # Fichier Jupyter contenant la recherche, le ML et le K-Means
