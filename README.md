@@ -56,7 +56,7 @@ source venv/bin/activate
 
 ### Étape 3 : Installer les dépendances
 ```bash
-pip install yfinance pandas numpy scikit-learn scipy PyPortfolioOpt matplotlib seaborn streamlit
+pip install yfinance pandas numpy scikit-learn scipy PyPortfolioOpt pypfopt matplotlib seaborn streamlit
 ```
 
 ### Pour lancer l'application streamlit
